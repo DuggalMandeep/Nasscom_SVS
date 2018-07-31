@@ -1,0 +1,25 @@
+<ngb-tabset class="tabset1">
+	<ngb-tab title="Issue E-Challan">
+		<ng-template ngbTabContent>
+			<app-challan>Loading...</app-challan>
+		</ng-template>
+        </ngb-tab>
+        
+	<ngb-tab title="View E-Challan">
+		<ng-template ngbTabContent><br/>
+                        <form class="container" style="width: 50%;">
+                                <div class="form-group">
+                                        <label for="junction"><font color="brown">Vehicle Number</font></label>
+                                        <input type="text" id="junction" class="form-control"  placeholder="Enter Vehicle Number!" >
+                                </div>
+
+                                     
+                                <button type="submit" class="btn btn-success navbar-btn-lg form-control" >Submit</button>
+                                <br/>
+                        </form>
+                        <div *ngIf='true'>
+                                <app-view>Loading...</app-view>
+                        </div>
+		</ng-template>
+	</ngb-tab>
+</ngb-tabset>

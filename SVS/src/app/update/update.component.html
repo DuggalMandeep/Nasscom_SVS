@@ -1,0 +1,134 @@
+<div class="vehicle" style="padding-top: 80px">Update Vehicle</div>
+
+
+<div class="container">
+    <form [formGroup]="updateForm" (ngSubmit)="UpdateVeh()" >
+  
+      <div class="row1 row">
+        
+        <span>
+  
+            <div class="form-group">
+              <input id="vehicle_number" type="text" placeholder="Mentioned on Vehicle's Number Plate"class=" gate form-control"
+              formControlName="vehicle_number"
+              value=""
+              (keyup)="getData()"
+              required>
+              <label for="vehicle_number">Vehicle Number:</label>
+            </div>
+
+            <div *ngIf="!vehicle_number.valid && vehicle_number.touched"
+                                  class="alert-danger">Invalid Vehicle Number!!
+                          </div>
+        </span>
+            
+        
+        <span>
+          <div class="form-group">
+            <input id="owner_name" type="text" placeholder="OwnerName" class=" gate form-control"
+            formControlName="owner_name"
+            >
+            <label for="owner_name">&nbsp;&nbsp;&nbsp;OwnerName:&nbsp;&nbsp;&nbsp;</label>
+          </div>
+
+          <div *ngIf="!owner_name.valid && owner_name.touched"
+              class="alert-danger"> Enter a valid name!!
+          </div>
+      </span>
+        
+      <span>
+        <div class="form-group">
+          <input id="owner_address" type="text" placeholder="Owner Resident Address" class=" gate form-control"
+          formControlName="owner_address"
+           >
+          <label for="owner_address">&nbsp;OwnerAddress:&nbsp;</label>
+        </div>
+        <div *ngIf="!owner_address.valid && owner_address.touched"
+            class="alert-danger"> Address Not detected!!
+        </div>
+    </span>
+        
+    <span>
+      <div class="form-group">
+        <input id="dob" type="date"class=" gate form-control"
+        formControlName="dob"
+        >
+        <label for="dob">&nbsp;Owner D.O.B. :&nbsp;&nbsp;</label>
+      </div>
+      <div *ngIf="!dob.valid && dob.touched"
+                            class="alert-danger">Select Date!!
+                    </div>
+     </span>
+
+     <span>
+      <div class="form-group">
+        <input id="city" type="text" placeholder="City Of Residence" class=" gate form-control"
+        formControlName="city"
+        >
+        <label for="city">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OwnerCity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      </div>
+      <div *ngIf="!city.valid && city.touched"
+                            class="alert-danger">Enter a valid city name!!
+                    </div>
+      </span>
+      <span>
+        <div class="form-group">
+          <input id="phone" type="text" placeholder="Your Contact Number!" class=" gate form-control"
+          formControlName="phone"
+          >
+          <label for="phone">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+        </div>
+        <div *ngIf="!phone.valid && phone.touched"
+                              class="alert-danger">Invalid Mobile Number!!
+                      </div>
+    </span>
+    <span>
+      <div class="form-group">
+        <input id="mail" type="email" placeholder="Email Address" class=" gate form-control"
+        formControlName="mail">
+        <label for="mail">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+      </div>
+      <div *ngIf="!mail.valid && mail.touched"
+                            class="alert-danger">Invalid Email Address!!
+                    </div>
+  </span>
+  
+          
+        <span>
+              <div class="form-group">
+                  <select class="gate form-control " id="proof" 
+                  formControlName="proof"
+                  required>
+                      <option>---------Select---------</option>
+                      <option value="p1">Aadhar</option>
+                      <option value="p2">Driving Licence</option>
+                      <option value="p3">PanCard</option>
+                      <option value="p4">PassPort</option>
+                  </select>
+                  <label for="proof">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Identity Proof:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+              </div>
+              <div *ngIf="!proof.valid && proof.touched"
+                                  class="alert-danger">Select proof type!!
+                          </div>
+          </span>
+          <span>
+            <div class="upload-boton-wrapper">
+                <button class="boton">Upload Document file<span class="glyphicon glyphicon-cloud-upload"></span></button>
+                <input id="file" type="file" name="file"
+                required>
+              </div>
+              <div *ngIf="!file.valid && file.touched"
+                                  class="alert-danger">Select Document!!
+                          </div>
+        </span>
+          <br/>
+          <span>
+            <div class="form-group">
+              <input type="submit" class="btn btn-lg active button" value="Register" style="margin-bottom: 20px;">
+            </div>
+          </span> 
+      </div>
+  
+    </form>
+  </div>
+  

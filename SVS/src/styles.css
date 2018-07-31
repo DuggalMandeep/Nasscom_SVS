@@ -1,0 +1,407 @@
+@import "node_modules/bootstrap/dist/css/bootstrap.min.css";
+
+
+/* hover button */
+
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #377D6A;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px rgb(142, 161, 145);
+}
+
+.button:hover {background-color: rgb(24, 124, 97)}
+
+.button:active {
+  background-color: #377D6A;
+  box-shadow: 0 5px rgb(142, 161, 145);
+  transform: translateY(4px);
+}
+
+/* upload Button */
+
+.upload-boton-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.boton {
+  border: 2px solid #377D6A;
+  color: #377D6A;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.upload-boton-wrapper input[type=file] {
+  font-size: 100px;
+  left: 10px;
+  top: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+/* animated Button */
+
+/* .button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 24px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .button:hover {background-color: #3e8e41}
+  
+  .button:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+ */
+
+  /* RippleEffect button */
+  /* .button {
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s; /* Safari *
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+.button:after {
+    content: "";
+    background: #f1f1f1;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+}
+
+.button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+} */
+
+
+  /* -----------------------------Input fields ------------------------------ */
+
+  @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,600,300,800);
+  * {
+    box-sizing: border-box;
+  }
+  
+  html,
+  body {
+    overflow-x: hidden;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    color: #fff;
+    background: #efefef;
+  }
+  
+  .row1 {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 60px 30px;
+    background: #fafafa;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .row:before {
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: -5000px;
+    height: 100%;
+    width: 15000px;
+    z-index: -1;
+    background: inherit;
+  }
+  .row:first-child {
+    padding: 40px 30px;
+  }
+  .row:nth-child(2), .row:nth-child(8), .row:nth-child(10) {
+    background: rgb(46, 138, 132);
+  }
+  .row:nth-child(3), .row:nth-child(7) {
+    background: #377D6A;
+  }
+  .row:nth-child(4), .row:nth-child(6) {
+    background: #7AB893;
+  }
+  .row:nth-child(5) {
+    background: #B2E3AF;
+  }
+  .row span {
+    position: relative;
+    display: inline-block;
+    margin: 30px 10px;
+  }
+  
+
+  .gate {
+    display: inline-block;
+    width: 300px;
+    padding: 10px 0 10px 20px;
+    font-family: "Open Sans", sans;
+    font-weight: 400;
+    color: #377D6A;
+    background: #efefef;
+    border: 0;
+    border-radius: 3px;
+    outline: 0;
+    text-indent: 65px;
+    transition: all .3s ease-in-out;
+  }
+  .gate::-webkit-input-placeholder {
+    color: #efefef;
+    text-indent: 0;
+    font-weight: 300;
+  }
+  .gate + label {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 15px;
+    text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+    background: #7AB893;
+    transition: all .4s ease-in-out;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    transform-origin: left bottom;
+    z-index: 99;
+  }
+  .gate + label:before, .gate + label:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+    background: #377D6A;
+    transform-origin: left bottom;
+    transition: all .4s ease-in-out;
+    pointer-events: none;
+    z-index: -1;
+  }
+  .gate + label:before {
+    background: rgba(3, 36, 41, 0.2);
+    z-index: -2;
+    right: 20%;
+  }
+  
+  span:nth-child(2) .gate {
+    text-indent: 85px;
+  }
+  
+  span:nth-child(2) .gate:focus,
+  span:nth-child(2) .gate:active {
+    text-indent: 0;
+  }
+  
+  .gate:focus,
+  .gate:active {
+    color: #377D6A;
+    text-indent: 0;
+    background: #fff;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+  }
+  .gate:focus::-webkit-input-placeholder,
+  .gate:active::-webkit-input-placeholder {
+    color: #aaa;
+  }
+  .gate:focus + label,
+  .gate:active + label {
+    transform: rotate(-66deg);
+    border-radius: 3px;
+  }
+  .gate:focus + label:before,
+  .gate:active + label:before {
+    transform: rotate(10deg);
+  }
+  
+
+  /*------------------------ select Item ------------------------*/
+
+  .custom-select {
+  position: relative;
+  font-family: Arial;
+}
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+.select-selected {
+  background-color: DodgerBlue;
+}
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+/*style the items (options), including the selected item:*/
+.select-items div,.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+.select-items div:hover, .same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+
+
+/* Traffic light */
+
+  /**
+ * Traffic light animation
+ */
+
+#trafficlight{
+  background:#333;
+  height:60px;
+  width:30px;
+  border-radius:6px;
+  position:relative;
+  border:1px #000 solid
+  }
+  #trafficlight span {
+  margin:4px auto;
+  display:block;
+  width:13px;
+  height:13px;
+  border:1px solid #000;
+  border-radius:50%;
+  }
+  #light1{ 		/* red light*/
+  background:#300;
+  animation: redlight 12s infinite
+  }
+  #light2{  		/* amber light*/
+  background:#430;
+  animation: amberlight 12s infinite
+  }
+  #light3{  		/* green light*/
+  background:#030;
+  animation: greenlight 12s infinite
+  }
+  @keyframes greenlight {
+    0%{background:#030}
+    5%{background:#0a0}
+    45%{background:#0a0}
+    50%{background:#030}
+    100%{background:#030}
+    }
+  @keyframes amberlight{
+    0%{background:#430}
+    45%{background:#430}
+    55%{background:#fc0}
+    60%{background:#430}
+    100%{background:#430}
+  }
+  @keyframes redlight{
+    0%{background:#300}
+    55%{background:#300}
+    60%{background:#f00}
+    95%{background:#f00}
+    100%{background:#300}
+  }
+  
+  #light1, #light2, #light3 {
+    animation-duration:4s
+    }
+  
+  
+  
+  .tra{
+  background: rgb(59,103,158); /* Old browsers */
+  min-height:50%;
+  height:140px;
+  background: linear-gradient(top, 
+  rgba(59,103,158,1) 0%,
+  rgba(43,136,217,1) 72%,
+  rgba(6,17,40,1) 73%,
+  rgba(61,48,33,1) 88%); 
+  }
+
+
+
+  /* ---------------------------------------------------------------------------- */
+.vehicle{
+  margin-top: 10px;
+  background: #aeb8b5;
+  text-align: center;
+  width: 100%;
+  text-shadow: #333;
+  font-size: 20px;
+  font-weight: bold;
+  
+}

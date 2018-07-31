@@ -1,0 +1,254 @@
+ 
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-expand-sm" style="min-height: 80px;">
+  <div class = "navbar-header">
+    <a href="#" class="navbar-brand">
+      <div id="trafficlight" >
+          <span id="light1"></span>
+          <span id="light2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signal_Voilation_System</span>
+          <span id="light3"></span>
+        </div></a>
+  </div>
+  <button (click)="goto();" type = "button" class = "button navbar-btn btn btn-lg active navbar-right" style="margin-right: 10px;">Login</button>
+  </nav> 
+
+<div class="vehicle" style="padding-top: 80px">Vehicle Registration form</div>
+
+<!-- Form Begins here -->
+
+<div class="container">
+  <form #VehRegiForm="ngForm" (ngSubmit)="update(VehRegiForm)" >
+
+    <div class="row1 row">
+        <span>
+
+          <div class="form-group">
+            <input id="vehicle_number" type="text" placeholder="Mentioned on Vehicle's Number Plate"class=" gate form-control"
+                name="vehicle_number"
+                ngModel
+                #vehicle_number="ngModel" 
+                required
+                pattern="^[A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{4}$">
+            <label for="vehicle_number">Vehicle Number:</label>
+          </div>
+
+          <div *ngIf="!vehicle_number.valid && vehicle_number.touched"
+                                  class="alert-danger">Invalid Vehicle Number!!
+                          </div>
+        </span>
+
+        <span>
+
+                <div class="form-group">
+                  <input id="manufacturer" type="text" placeholder="Mention the vehicle Manufacturer"class=" gate form-control"
+                      name="manufacturer"
+                      ngModel
+                      #manufacturer="ngModel" 
+                      required>
+                  <label for="manufacturer">&nbsp;&nbsp;&nbsp;&nbsp;Manufacturer:&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                </div>
+      
+                <div *ngIf="!manufacturer.valid && manufacturer.touched"
+                                        class="alert-danger">Enter Manufacturer Name!!
+                                </div>
+              </span>
+
+        <span>
+
+          <div class="form-group">
+            <input id="y_o_r" type="date" class=" gate form-control"
+                name="y_o_r"
+                ngModel
+                #y_o_r="ngModel" 
+                required>
+            <label for="YOR">YearOfRegistration:</label>
+          </div>
+          <div *ngIf="!y_o_r.valid && y_o_r.touched"
+                                  class="alert-danger">Select Date!!
+                          </div>
+          
+        </span>
+
+
+        <span>
+
+          <div class="form-group">
+            <input id="model" type="text" placeholder="Model Of Vehicle" class=" gate form-control"
+                name="model"
+                ngModel
+                #model="ngModel" 
+                minlength=1
+                required>
+            <label for="model">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Model:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+          </div>
+
+          <div *ngIf="!model.valid && model.touched"
+                                  class="alert-danger">Select Category!!
+                          </div>
+
+        </span>
+        <span>
+          <div class="form-group">
+              <select class="gate form-control" id="Category" name="Category" ngModel #Category="ngModel" required>
+                  <option value="" >---------Select---------</option>
+                  <option value="2">2 Wheeler</option>
+                  <option value="3">3 Wheeler</option>
+                  <option value="4">4 Wheeler</option>
+                  <option value="6">6 Wheeler</option>
+              </select>
+              <label for="Category">Select Category:</label>
+          </div>
+          <div *ngIf="!Category.valid && Category.touched"
+                class="alert-danger">Model-name must be NonEmpty!!
+            </div>
+
+        </span>
+        
+        <span>
+            <div class="form-group">
+                <select class="gate form-control " id="fuel" name="fuel" ngModel #fuel="ngModel" required>
+                    <option value="">---------Select---------</option>
+                    <option value="petrol">Petrol</option>
+                    <option value="diesel">Diesel</option>
+                    <option value="electric">Electric</option>
+                </select>
+                <label for="fuel">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fuel:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            </div>
+            <div *ngIf="!fuel.valid && fuel.touched"
+                class="alert-danger">Please select applicable option!!
+            </div>
+        </span>
+
+
+        <span>
+            <div class="form-group">
+              <input id="color" type="text" placeholder="Color of Vehicle" class="gate form-control"
+              name="color"
+              ngModel
+              #color="ngModel"
+              required>
+              <label for="color">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Color:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            </div>
+
+            <div *ngIf="!color.valid && color.touched"
+                class="alert-danger">Enter a valid Color!!
+            </div>
+        </span>
+        <span>
+            <div class="form-group">
+              <input id="owner_name" type="text" placeholder="OwnerName" class=" gate form-control"
+              name="owner_name"
+              ngModel
+              #owner_name="ngModel"
+              minlength="3" required>
+              <label for="owner_name">&nbsp;&nbsp;&nbsp;OwnerName:&nbsp;&nbsp;&nbsp;</label>
+            </div>
+
+            <div *ngIf="!owner_name.valid && owner_name.touched"
+                class="alert-danger"> Enter a valid name!!
+            </div>
+        </span>
+
+        <span>
+            <div class="form-group">
+              <input id="owner_address" type="text" placeholder="Owner Resident Address" class=" gate form-control"
+              name="owner_address"
+              ngModel
+              #owner_address="ngModel"
+              required>
+              <label for="owner_address">&nbsp;OwnerAddress:&nbsp;</label>
+            </div>
+            <div *ngIf="!owner_address.valid && owner_address.touched"
+                class="alert-danger"> Address Not detected!!
+            </div>
+        </span>
+        <span>
+            <div class="form-group">
+              <input id="dob" type="date" class="gate form-control"
+              name="dob"
+              ngModel
+              #dob="ngModel" 
+              required>
+              <label for="dob">&nbsp;Owner D.O.B. :&nbsp;&nbsp;</label>
+            </div>
+            <div *ngIf="!dob.valid && dob.touched"
+                                  class="alert-danger">Select Date!!
+                          </div>
+        </span>
+        <span>
+            <div class="form-group">
+              <input id="city" type="text" placeholder="City Of Residence" class=" gate form-control"
+              name="city"
+              ngModel
+              #city="ngModel" required>
+              <label for="city">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;OwnerCity:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            </div>
+            <div *ngIf="!city.valid && city.touched"
+                                  class="alert-danger">Enter a valid city name!!
+                          </div>
+        </span>
+        <span>
+            <div class="form-group">
+              <input id="phone" type="text" placeholder="Your Contact Number!" class=" gate form-control"
+              name="phone"
+              ngModel
+              #phone="ngModel" required
+              minlength="10">
+              <label for="phone">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Phone:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            </div>
+            <div *ngIf="!phone.valid && phone.touched"
+                                  class="alert-danger">Invalid Mobile Number!!
+                          </div>
+        </span>
+        <span>
+            <div class="form-group">
+              <input id="mail" type="email" placeholder="Email Address" class=" gate form-control"
+              name="mail"
+              ngModel
+              #mail="ngModel" required>
+              <label for="mail">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            </div>
+            <div *ngIf="!mail.valid && mail.touched"
+                                  class="alert-danger">Invalid Email Address!!
+                          </div>
+        </span>
+        
+        <span>
+            <div class="form-group">
+                <select class="gate form-control " id="proof" name="proof" ngModel #proof="ngModel" required>
+                    <option value="">---------Select---------</option>
+                    <option value="p1">Aadhar</option>
+                    <option value="p2">Driving Licence</option>
+                    <option value="p3">PanCard</option>
+                    <option value="p4">PassPort</option>
+                </select>
+                <label for="proof">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Identity Proof:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+            </div>
+            <div *ngIf="!proof.valid && proof.touched"
+                                  class="alert-danger">Select Document type!!
+                          </div>
+        </span>
+        <span>
+            <div class="upload-boton-wrapper form-group">
+                <button class="boton">Upload Document file<span class="glyphicon glyphicon-cloud-upload"></span></button>
+                <input id="file" type="file" name="file"
+               
+                required>
+                <!-- ngModel
+                #file="ngModel" -->
+              </div>
+              <div *ngIf="!file.valid && file.touched"
+                                  class="alert-danger">Select Document!!
+                          </div>
+        </span>
+        <br/>
+        <span>
+          <div class="form-group">
+            <input type="submit" class="btn btn-lg active button" value="Register" style="margin-bottom: 20px;">
+          </div>
+        </span> 
+    </div>
+
+  </form>
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,23 @@
+.myform{
+    border: 7px inset rgb(156, 7, 7);
+    padding: 20px;
+    background-blend-mode: hue;
+    padding-bottom: 70px;
+}
+
+.body{
+    background-image: './assets/cs1.jpg';
+padding-top: 60px;
+ backface-visibility: visible;
+ 
+  
+	
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: 100%;
+	
+  /* Set up positioning */
+  background-position: center;
+    background-repeat: no-repeat;
+     background-size: 100% 100%; 
+}

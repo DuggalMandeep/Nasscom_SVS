@@ -1,0 +1,71 @@
+<nav class="navbar navbar-inverse navbar-fixed-top navbar-expand-sm" style="min-height: 80px;">
+    <div class = "navbar-header">
+      <a href="#" class="navbar-brand">
+        <div id="trafficlight" >
+            <span id="light1"></span>
+            <span id="light2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Signal_Voilation_System</span>
+            <span id="light3"></span>
+          </div></a>
+    </div>
+    <button type = "button" (click)="goto();" class = "button navbar-btn btn btn-lg active navbar-right" style="margin-right: 10px;">Register</button>
+</nav>
+
+<div class="body">
+    <div *ngIf="this.err"
+    class="alert-danger">Invalid UserName or Password! Please Try Again ;)
+</div>
+    <div class="container backCol">
+      <div class="row1 row">
+        <h2 align="center" class="vehicle" ><font color="black">Login Form</font></h2>
+        <div class="col-sm-8">
+          <div class="col-lg-12 col-lg-offset-3">
+            <div class="myform">
+              
+              <form #log="ngForm" (ngSubmit)="Authenticate(log)">
+                <fieldset>
+                  <legend>Login Here</legend>
+                  <div class="form-group">
+                    <label for="uname" style="color:rgb(231, 154, 154);">USER NAME</label>
+                    
+                    <input type="text" id="uname" class="form-control"  placeholder="enter user name"
+                    name="uname" 
+                    ngModel
+                    #uname="ngModel" required
+                    minlength="4"
+                    maxlength="20"
+                    pattern="^[a-zA-Z0-9]{4,12}$"/>
+                    
+                    <div *ngIf="!uname.valid && uname.touched"
+                                  class="alert-danger">Invalid Username: It must contain 4-20 alphanuberic characters 
+                          </div>
+                  </div>
+
+
+
+                  <div class="form-group">
+                    <label for="pass" style="color:rgb(231, 154, 154);">PASSWORD</label>
+                    
+                    <input type="password" id="pass" class="form-control" placeholder="enter password" 
+                    name="pass"
+                    ngModel
+                    #pass="ngModel" required
+                    pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"/>
+                    
+                    <div *ngIf="!pass.valid && pass.touched"
+                                  class="alert-danger">Invalid Password:It must contain at least 8 characters ,at least 1 uppercase letter, 1 lowercase letter, and 1 number Can contain special characters
+
+                              </div>
+                  
+                  </div>
+                </fieldset>
+                <input type="submit" [attr.disabled]="!(uname.valid && pass.valid) ? true : null " class="btn btn-md active button" value="Login"/>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>  
+    </div> 
+  </div>
+
+<app-footer></app-footer>
